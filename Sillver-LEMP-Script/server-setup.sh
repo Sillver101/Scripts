@@ -6,7 +6,7 @@ if [[ "$EUID" -ne 0 ]]; then
     echo "ERROR: This script must be run as root."
     echo
     echo "Run it using:"
-    echo "  curl -fsSL https://raw.githubusercontent.com/Sillver101/Scripts/main/Sillver-Helper-Scripts/server-setup.sh | sudo bash"
+    echo "  curl -fsSL https://raw.githubusercontent.com/Sillver101/Scripts/main/Sillver-LEMP-Script/server-setup.sh | sudo bash"
     echo
     exit 1
 fi
@@ -278,6 +278,7 @@ BLUE='\033[0;34m'
 CYAN='\033[0;36m'
 MAGENTA='\033[0;35m'
 WHITE='\033[1;37m'
+BOLD='\033[1m'
 NC='\033[0m'
 
 require_cmd() {
@@ -351,7 +352,7 @@ check_http_placeholder_local_host_header() {
     return 1
 }
 
-echo -e \"\${CYAN}\${BOLD:-}Let's Encrypt / Certbot Helper\${NC}\"
+echo -e \"\${CYAN}\${BOLD}Let's Encrypt / Certbot Helper\${NC}\"
 echo -e \"\${BLUE}==========================================\${NC}\"
 echo
 echo \"Prerequisites:\"
