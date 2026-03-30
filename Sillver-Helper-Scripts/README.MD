@@ -16,7 +16,7 @@ lets the helper check DNS, public IP, UFW, listening ports, and whether the plac
 The helper checks http://your-domain/ from the server itself. If the upstream firewall or provider does not support hairpin NAT, that check can fail even though the page works fine from the public internet. The script already tells the user when that looks like the issue. Certbot’s Nginx flow can automatically request and install the certificate, and renewal can be tested with certbot renew --dry-run
 
 Run the script with the following command 
-curl -fsSL https://raw.githubusercontent.com/YOURUSER/YOURREPO/main/server-setup.sh | sudo bash
+curl -fsSL https://raw.githubusercontent.com/Sillver101/Scripts/main/Sillver-Helper-Scripts/server-setup.sh | sudo bash
 
 You can verify the script that is downloaded with the raw file by running this
-curl -fsSL https://raw.githubusercontent.com/YOURUSER/YOURREPO/main/server-setup.sh | sudo bash
+curl -fsSL https://raw.githubusercontent.com/Sillver101/Scripts/main/Sillver-Helper-Scripts/server-setup.sh | sudo bash
