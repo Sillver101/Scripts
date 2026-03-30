@@ -1,4 +1,3 @@
-Add files via upload
 This is a custom script created to setup a Hardened LEMP server running on Ubuntu 20.04
 The script installs
 Nginx,
