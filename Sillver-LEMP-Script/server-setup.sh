@@ -6,7 +6,7 @@ if [[ "$EUID" -ne 0 ]]; then
     echo "ERROR: This script must be run as root."
     echo
     echo "Run it using:"
-    echo "  curl -fsSL https://raw.githubusercontent.com/Sillver101/Scripts/main/Sillver-LEMP-Script/server-setup.sh | sudo bash"
+    echo "  curl -fsSL https://raw.githubusercontent.com/Sillver101/Scripts/main/Sillver-Helper-Scripts/server-setup.sh | sudo bash"
     echo
     exit 1
 fi
@@ -25,35 +25,37 @@ NC='\033[0m'
 
 clear
 
-cat << "EOF"
-  _____ _ _ _                __  ___ __
- / ____(_) | |              /_|/ _ \  |
-| (___  _| | |_   _____ _ __| | | | | |
- \___ \| | | \ \ / / _ \ '__| | | | | |
- ____) | | | |\ V /  __/ |  | | |_| | |
-|_____/|_|_|_| \_/ \___|_|  |_|\___/|_|
+cat << 'EOF'
+   _____ _ _ _                     _   ___  _
+  / ____(_) | |                   / | / _ \| |
+ | (___  _| | |_   _____ _ __    | || | | | |
+  \___ \| | | \ \ / / _ \ '__|   | || | | | |
+  ____) | | | |\ V /  __/ |      | || |_| | |
+ |_____/|_|_|_| \_/ \___|_|      |_| \___/|_|
 
 EOF
 
 echo -e "${CYAN}${BOLD}Sillver101 Server Setup${NC}"
 echo -e "${BLUE}============================================================${NC}"
 echo -e "${WHITE}This script will install and configure:${NC}"
-echo -e " ${GREEN}•${NC} Nginx"
-echo -e " ${GREEN}•${NC} PHP-FPM with common extensions"
-echo -e " ${GREEN}•${NC} MySQL Server"
-echo -e " ${GREEN}•${NC} OpenSSH [SSH and SFTP]"
-echo -e " ${GREEN}•${NC} UFW Firewall [22, 80, 443]"
-echo -e " ${GREEN}•${NC} Fail2Ban"
-echo -e " ${GREEN}•${NC} ClamAV"
-echo -e " ${GREEN}•${NC} Default Nginx site with placeholder page"
-echo -e " ${GREEN}•${NC} SSL helper script at ${YELLOW}/opt/server-tools/request-ssl.sh${NC}"
+echo -e " ${GREEN}-${NC} Nginx"
+echo -e " ${GREEN}-${NC} PHP-FPM with common extensions"
+echo -e " ${GREEN}-${NC} MySQL Server"
+echo -e " ${GREEN}-${NC} OpenSSH [SSH and SFTP]"
+echo -e " ${GREEN}-${NC} UFW Firewall [22, 80, 443]"
+echo -e " ${GREEN}-${NC} Fail2Ban"
+echo -e " ${GREEN}-${NC} ClamAV"
+echo -e " ${GREEN}-${NC} Default Nginx site with placeholder page"
+echo -e " ${GREEN}-${NC} SSL helper script at ${YELLOW}/opt/server-tools/request-ssl.sh${NC}"
 echo
 echo -e "${WHITE}The default website will show:${NC}"
 echo -e " ${YELLOW}Server setup for <domain>${NC}"
 echo
+
 read -rp "Continue with installation? [y/N]: " CONFIRM
 case "$CONFIRM" in
-    y|Y|yes|YES) ;;
+    y|Y|yes|YES)
+        ;;
     *)
         echo "Cancelled."
         exit 0
